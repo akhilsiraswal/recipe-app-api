@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        - DEV=true # this is only used for development purposes 
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: > 
+      sh -c "python manage.py runserver 0.0.00:8000"
